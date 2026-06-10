@@ -66,11 +66,174 @@ Click a marker to explore the location.
 
 <script>
 
-var map = L.map('map').setView([17.43,78.35], 13);
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+var map = L.map('map').setView([17.414,78.339], 14);
 
 L.tileLayer(
-'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+attribution: '&copy; OpenStreetMap contributors'
+}
 ).addTo(map);
+
+
+// WIPRO GATE
+
+var wiproGate = L.marker([17.427228, 78.341653]).addTo(map);
+
+wiproGate.bindTooltip("Wipro Gate");
+
+wiproGate.on('click', function(){
+
+map.flyTo([17.427228, 78.341653], 16);
+
+document.getElementById('content').innerHTML = `
+
+<h2>Wipro Gate</h2>
+
+<img src="images/WiproGate3.jpeg">
+<img src="images/WiproGate2.jpeg">
+
+<audio controls>
+<source src="audio/1. WiproGate.mp3">
+</audio>
+
+<p>
+The entrance to Hyderabad's Financial District is dominated by vehicle movement, security infrastructure and employee circulation. The soundscape reflects a highly organized corporate environment.
+</p>
+
+`;
+
+});
+
+
+// WIPRO LAKE
+
+var wiproLake = L.marker([17.424922, 78.342108]).addTo(map);
+
+wiproLake.bindTooltip("Wipro Lake");
+
+wiproLake.on('click', function(){
+
+map.flyTo([17.424922, 78.342108], 16);
+
+document.getElementById('content').innerHTML = `
+
+<h2>Wipro Lake</h2>
+
+<img src="images/WiproLake1.jpeg">
+<img src="images/WiproLake2.jpeg">
+<img src="images/WiproLake3.jpeg">
+<img src="images/WiproLake4.jpeg">
+<img src="images/WiproLake5.jpeg">
+
+<audio controls>
+<source src="audio/2. WiproLake_compressed.mp3">
+</audio>
+
+<p>
+Birdsong, wind and water sounds coexist with distant traces of traffic and urban activity. Despite being surrounded by development, the lake provides an acoustic refuge.
+</p>
+
+`;
+
+});
+
+
+// TEA TIME STALL
+
+var teaTime = L.marker([17.424722, 78.340142]).addTo(map);
+
+teaTime.bindTooltip("Tea Time Stall");
+
+teaTime.on('click', function(){
+
+map.flyTo([17.424722, 78.340142], 16);
+
+document.getElementById('content').innerHTML = `
+
+<h2>Tea Time Stall</h2>
+
+<img src="images/TeaTimeStall.png">
+
+<audio controls>
+<source src="audio/TeaTimeStallmerged.mp3">
+</audio>
+
+<p>
+Conversations, food preparation and passing traffic combine to create a lively social soundscape where workers, residents and visitors briefly intersect.
+</p>
+
+`;
+
+});
+
+
+// PRESTIGE HIGH FIELDS
+
+var prestige = L.marker([17.414756, 78.336833]).addTo(map);
+
+prestige.bindTooltip("Prestige High Fields");
+
+prestige.on('click', function(){
+
+map.flyTo([17.414756, 78.336833], 16);
+
+document.getElementById('content').innerHTML = `
+
+<h2>Prestige High Fields Construction Site</h2>
+
+<img src="images/PHFconstruction1.jpeg">
+<img src="images/PHFconstruction2.jpeg">
+<img src="images/PHFconstruction3.jpeg">
+<img src="images/PHFoppconstruction.jpeg">
+
+<audio controls>
+<source src="audio/PrestigeHighFieldsConstruction.mp3">
+</audio>
+
+<p>
+Heavy machinery and construction activity reveal a landscape still in the process of becoming. Development here is not only visible but clearly audible.
+</p>
+
+`;
+
+});
+
+
+// GAUSHALA
+
+var gaushala = L.marker([17.396917, 78.342200]).addTo(map);
+
+gaushala.bindTooltip("Sri Krishna Godavari Gaushala");
+
+gaushala.on('click', function(){
+
+map.flyTo([17.396917, 78.342200], 16);
+
+document.getElementById('content').innerHTML = `
+
+<h2>Sri Krishna Godavari Gaushala</h2>
+
+<img src="images/SriKrishnaGodavariGaushala.jpeg">
+<img src="images/SriKrishnaGodavariGaushala2.jpeg">
+
+<audio controls>
+<source src="audio/SriKrishnaGodavariGaushala.mp3">
+</audio>
+
+<p>
+Animal sounds, bells and caretaker activity preserve an acoustic environment that contrasts sharply with nearby high-rise development.
+</p>
+
+`;
+
+});
+
+</script>
 
 </script>
 
