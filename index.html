@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -29,6 +30,7 @@ width:40%;
 padding:20px;
 overflow-y:auto;
 box-sizing:border-box;
+background:#f8f8f8;
 }
 
 img{
@@ -42,6 +44,10 @@ width:100%;
 margin-bottom:20px;
 }
 
+h2{
+margin-top:0;
+}
+
 </style>
 
 </head>
@@ -52,7 +58,11 @@ margin-bottom:20px;
 
 <div id="sidebar">
 
-<h2>Hyderabad Sonic Map</h2>
+<h2>Listening to Urban Transformation</h2>
+
+<p>
+How does sound change across Hyderabad's rapidly developing urban corridor between Kokapet and the Financial District?
+</p>
 
 <p>
 Click a marker to explore the location.
@@ -61,10 +71,6 @@ Click a marker to explore the location.
 <div id="content"></div>
 
 </div>
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -80,9 +86,47 @@ attribution: '&copy; OpenStreetMap contributors'
 ).addTo(map);
 
 
+
+// CUSTOM ICONS
+
+const corporateIcon = L.icon({
+iconUrl: 'pin-icons/corporate-icon.png',
+iconSize: [42,42],
+iconAnchor: [21,21]
+});
+
+const lakeIcon = L.icon({
+iconUrl: 'pin-icons/lake-icon.png',
+iconSize: [42,42],
+iconAnchor: [21,21]
+});
+
+const teaIcon = L.icon({
+iconUrl: 'pin-icons/teastall-icon.png',
+iconSize: [42,42],
+iconAnchor: [21,21]
+});
+
+const constructionIcon = L.icon({
+iconUrl: 'pin-icons/construction-icon.png',
+iconSize: [42,42],
+iconAnchor: [21,21]
+});
+
+const gaushalaIcon = L.icon({
+iconUrl: 'pin-icons/gaushala-icon.png',
+iconSize: [42,42],
+iconAnchor: [21,21]
+});
+
+
+
 // WIPRO GATE
 
-var wiproGate = L.marker([17.427228, 78.341653]).addTo(map);
+var wiproGate = L.marker(
+[17.427228, 78.341653],
+{icon: corporateIcon}
+).addTo(map);
 
 wiproGate.bindTooltip("Wipro Gate");
 
@@ -110,9 +154,13 @@ The entrance to Hyderabad's Financial District is dominated by vehicle movement,
 });
 
 
+
 // WIPRO LAKE
 
-var wiproLake = L.marker([17.424922, 78.342108]).addTo(map);
+var wiproLake = L.marker(
+[17.424922, 78.342108],
+{icon: lakeIcon}
+).addTo(map);
 
 wiproLake.bindTooltip("Wipro Lake");
 
@@ -143,9 +191,13 @@ Birdsong, wind and water sounds coexist with distant traces of traffic and urban
 });
 
 
+
 // TEA TIME STALL
 
-var teaTime = L.marker([17.424722, 78.340142]).addTo(map);
+var teaTime = L.marker(
+[17.424722, 78.340142],
+{icon: teaIcon}
+).addTo(map);
 
 teaTime.bindTooltip("Tea Time Stall");
 
@@ -172,9 +224,13 @@ Conversations, food preparation and passing traffic combine to create a lively s
 });
 
 
+
 // PRESTIGE HIGH FIELDS
 
-var prestige = L.marker([17.414756, 78.336833]).addTo(map);
+var prestige = L.marker(
+[17.414756, 78.336833],
+{icon: constructionIcon}
+).addTo(map);
 
 prestige.bindTooltip("Prestige High Fields");
 
@@ -204,9 +260,13 @@ Heavy machinery and construction activity reveal a landscape still in the proces
 });
 
 
+
 // GAUSHALA
 
-var gaushala = L.marker([17.396917, 78.342200]).addTo(map);
+var gaushala = L.marker(
+[17.396917, 78.342200],
+{icon: gaushalaIcon}
+).addTo(map);
 
 gaushala.bindTooltip("Sri Krishna Godavari Gaushala");
 
@@ -232,8 +292,6 @@ Animal sounds, bells and caretaker activity preserve an acoustic environment tha
 `;
 
 });
-
-</script>
 
 </script>
 
