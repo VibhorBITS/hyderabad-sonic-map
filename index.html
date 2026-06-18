@@ -10,8 +10,7 @@
 
 <link rel="stylesheet"
 href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<link rel="stylesheet"
-href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+
 
 <style>
 
@@ -75,7 +74,6 @@ Click a marker to explore the location.
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 <script>
 
 var map = L.map('map').setView([17.414,78.339], 14);
@@ -296,38 +294,6 @@ What forms of life become audible when development slows down?
 `;
 
 });
-
-// SONIC WALK ROUTE
-
-L.Routing.control({
-    waypoints: [
-        L.latLng(17.396917, 78.342200), // Sri Krishna Godavari Gaushala
-        L.latLng(17.414756, 78.336833), // Prestige High Fields
-        L.latLng(17.424722, 78.340142), // Tea Time Stall
-        L.latLng(17.424922, 78.342108), // Wipro Lake
-        L.latLng(17.427228, 78.341653)  // Wipro Gate
-    ],
-
-    addWaypoints: false,
-    draggableWaypoints: false,
-    routeWhileDragging: false,
-    fitSelectedRoutes: true,
-    show: false,
-
-    createMarker: function () {
-        return null;
-    },
-
-  lineOptions: {
-      styles: [{
-          color: '#ff6600',
-          opacity: 0.9,
-          weight: 6,
-          dashArray: '15,8'
-      }]
-  }
-
-}).addTo(map);
 
 </script>
 
