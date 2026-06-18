@@ -295,6 +295,23 @@ What forms of life become audible when development slows down?
 
 });
 
+// WALK ROUTE
+
+var route = [
+    [17.396917, 78.342200], // Gaushala
+    [17.414756, 78.336833], // Prestige High Fields
+    [17.424722, 78.340142], // Tea Time Stall
+    [17.424922, 78.342108], // Wipro Lake
+    [17.427228, 78.341653]  // Wipro Gate
+];
+
+L.polyline(route, {
+    color: '#2c3e50',
+    weight: 4,
+    opacity: 0.8,
+    dashArray: '8,6'
+}).addTo(map);
+
 </script>
 
 </body>
